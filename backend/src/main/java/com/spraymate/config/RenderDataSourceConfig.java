@@ -36,8 +36,9 @@ public class RenderDataSourceConfig {
         String userInfo = dbUri.getUserInfo();
         String username = userInfo.split(":")[0];
         String password = userInfo.split(":")[1];
+        int port = dbUri.getPort() == -1 ? 5432 : dbUri.getPort();
         String jdbcUrl = "jdbc:postgresql://" + dbUri.getHost()
-                + ":" + dbUri.getPort()
+                + ":" + port
                 + dbUri.getPath()
                 + "?sslmode=require";
 
