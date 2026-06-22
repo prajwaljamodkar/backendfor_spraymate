@@ -22,6 +22,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/weather/**").permitAll()
                 .requestMatchers("/api/profile/**").permitAll()
+                .requestMatchers("/api/health").permitAll()
                 .anyRequest().authenticated()
             );
         return http.build();
